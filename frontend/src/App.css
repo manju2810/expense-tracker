@@ -1,0 +1,239 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- Light Theme Color Palette & Global Styles --- */
+:root {
+  --primary-blue: #4299e1; /* A bright, friendly blue */
+  --primary-blue-hover: #3182ce;
+  --accent-pink: #d53f8c; /* A vibrant pink/magenta */
+  --accent-pink-hover: #b6769b;
+  --danger-color: #e53e3e;
+  --background-light: #96768d; /* A warmer, softer off-white */ /* Very light grey background */
+  --container-light: #ffffff; /* Pure white containers */
+  --text-dark: #2d3748; /* Dark text for contrast */
+  --text-muted: #718096; /* Lighter text for secondary info */
+  --border-light: #8cb0df;
+  --box-shadow-light: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.App {
+  max-width: 700px;
+  margin: 60px auto; /* More vertical space */
+  padding: 40px;
+  background-color: var(--container-light);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-light);
+  border: 1px solid var(--border-light);
+}
+
+h1, h2, h3 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--text-dark);
+}
+
+h1 {
+  color: var(--primary-blue);
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  color: var(--text-dark);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 15px;
+  margin-top: 40px;
+  font-size: 1.6rem;
+}
+
+/* --- Form & Button Styles --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  background-color: #ffffff; /* <-- Change to a solid white */
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+  background-color: #ffffff; /* Ensure this is white or a specific light color */
+}
+
+.btn {
+  padding: 15px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  color: white;
+  background-color: var(--primary-blue);
+}
+.btn-primary:hover {
+  background-color: var(--primary-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-danger {
+  color: white;
+  background-color: var(--danger-color);
+}
+.btn-danger:hover {
+  background-color: #c53030;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+form p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+a {
+  color: var(--primary-blue);
+  font-weight: 500;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Dashboard Specific Styles --- */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.dashboard-header h2 {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 2rem;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px; /* More space between cards */
+  margin: 30px 0 40px 0;
+}
+
+.card {
+  background-color: var(--container-light);
+  padding: 30px; /* More padding inside cards */
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--box-shadow-light);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h4 {
+  margin-top: 0;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 2.5rem; /* Larger numbers */
+  font-weight: 700;
+  margin-bottom: 0;
+  color: var(--text-dark);
+}
+.card p span {
+  font-size: 1.5rem; /* Currency symbol size */
+  color: var(--primary-blue);
+  margin-right: 5px;
+}
+.card:first-child p span { /* Make the first card's currency pink for variety */
+  color: var(--accent-pink);
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--container-light);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-blue);
+}
+
+.expense-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.expense-info strong {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+.expense-info small {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.expense-amount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-pink); /* Using pink for the amount */
+}
