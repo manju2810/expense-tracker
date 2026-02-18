@@ -16,6 +16,11 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected successfully.'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+  mongoose.connection.once('open', () => {
+  console.log('Connected to DB:', mongoose.connection.name);
+});
+
+
 // --- Routes ---
 // We will create this file next
 app.use('/api/auth', require('./routes/auth'));
